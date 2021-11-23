@@ -1,0 +1,12 @@
+Exercice 1
+
+2) ça compléte automatiquement en inscrivant system.out.println
+3) ça propose la méthode to String
+4) ça propose la methode main 
+5) ça propose d'implémenter le constructeur de la classe. Ensuite si on tap set et ctrl + space ça nous propose d'implemnter un setter pour le champs foo créer précédemment.
+6) ça permet de refractor le nom de la classe et sur le champs fooealement.
+
+Exercice 2
+
+1) car on utilise le constrcuteur par défaut
+2)
