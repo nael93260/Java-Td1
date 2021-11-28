@@ -1,36 +1,30 @@
 package fr.dauphine.javaavance.td1;
 
+import java.util.LinkedList;
+import java.util.Objects;
+
 public class Polyline {
+	private LinkedList<Point> line;
 
-	private Point[] line;
-	private int indexInsert;
-
-	public Polyline(int maxNumerOfPoints) {
-		this.line = new Point[maxNumerOfPoints];
-		this.indexInsert = 0;
-
+	public Polyline() {
+		this.line = new LinkedList<>();
 	}
 
 	public void add(Point p) {
-		this.line[indexInsert] = p;// Objects.requireNonNull(p);
-		indexInsert++;
+		this.line.add(Objects.requireNonNull(p));
+
 	}
 
-	public int pointCapacity() {
-		return line.length;
-	}
+//	public int pointCapacity() {
+//		return line.size;
+//	}
 
 	public int nbPoints() {
-		return indexInsert;
+		return line.size();
 	}
 
-	public boolean contains(Point p1) {
-		for (Point p2 : line) {
-			if (p2.equals(p1)) {
-				return true;
-			}
-		}
-		return false;
+	public boolean contains(Point p) {
+		return line.contains(p);
 	}
 
 	@Override
@@ -45,7 +39,7 @@ public class Polyline {
 	}
 
 	public static void main(String[] args) {
-		Polyline p = new Polyline(1);
+		Polyline p = new Polyline();
 		Point p1 = new Point(1, 2);
 		Point p2 = new Point(1, 2);
 		Point p3 = null;
