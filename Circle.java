@@ -1,5 +1,7 @@
 package fr.dauphine.javaavance.td1;
 
+import java.util.Objects;
+
 public class Circle {
 	private Point center;
 	private double radius;
@@ -39,4 +41,28 @@ public class Circle {
 		}
 		return false;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(center, radius);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Circle other = (Circle) obj;
+
+		return Objects.equals(center, other.center)
+				&& Double.doubleToLongBits(radius) == Double.doubleToLongBits(other.radius);
+	}
+
+	public double getRadius() {
+		return radius;
+	}
+
 }
